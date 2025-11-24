@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REDDY CATCH</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo-title">
+      <span class="reddy-dot"></span>
+      <h1>REDDY CATCH</h1>
+    </div>
+
+    <div class="ca-wrapper">
+      <span id="contractAddress" data-address="PASTE_YOUR_CA_HERE">
+        PASTE_YOUR_CA_HERE
+      </span>
+      <button id="copyCaBtn">Copy CA</button>
+      <span id="copyStatus"></span>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <section class="game-section">
+      <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>Multiplier: <span id="multiplier">x1</span></div>
+        <div class="status" id="statusMessage"></div>
+      </div>
+
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+      <div class="controls">
+        <button id="startGameBtn">Start / Restart</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Leaderboard</h2>
+      <p>(coming soon)</p>
+      <ul id="leaderboardPlaceholder">
+        <li>#1 – ??? – 0 pts</li>
+        <li>#2 – ??? – 0 pts</li>
+        <li>#3 – ??? – 0 pts</li>
+      </ul>
+
+      <div class="info-card">
+        <h3>How to Play</h3>
+        <p>Drag Reddy left and right to catch falling bamboo.</p>
+        <p>Avoid bombs, knives, and rocks – one hit and it’s over.</p>
+        <p>Grab glowing 2x orbs for double points for 5 seconds.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
