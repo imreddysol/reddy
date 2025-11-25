@@ -1,188 +1,70 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background: #0b1510;
-  color: #fdfdfd;
+    margin: 0;
+    background: #c7f6c2;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
 }
 
-/* Top bar */
-
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  background: #101e18;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(90%);
 }
 
-.reddy-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ff7b4a;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 60px;
+    background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.4));
 }
 
-.top-bar h1 {
-  font-size: 20px;
-  letter-spacing: 1px;
+.title {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
 }
 
-.ca-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
+.copy-btn, .sound-btn {
+    background: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 8px;
 }
 
-#contractAddress {
-  padding: 4px 8px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+.copied {
+    color: #6eff98;
+    font-size: 16px;
+    opacity: 0;
+    transition: 0.4s ease;
 }
 
-#copyCaBtn {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background: #34c759;
-  color: #06100a;
-  font-weight: 600;
+.socials {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
 }
 
-#copyCaBtn:hover {
-  filter: brightness(1.1);
+.socials a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: 600;
 }
-
-#copyStatus {
-  font-size: 12px;
-  color: #8ef0b0;
-}
-
-/* Layout */
-
-.main-layout {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  padding: 20px 24px;
-}
-
-@media (max-width: 900px) {
-  .main-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-.game-section {
-  background: radial-gradient(circle at top, #1d392b 0, #0b1510 55%, #050805 100%);
-  border-radius: 14px;
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.hud {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.status {
-  font-size: 13px;
-  color: #ffe27a;
-}
-
-#gameCanvas {
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  background: linear-gradient(
-    180deg,
-    #c8f5c9 0%,
-    #9fe6a5 40%,
-    #6dcf82 100%
-  );
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.controls {
-  margin-top: 10px;
-  text-align: center;
-}
-
-#startGameBtn {
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: none;
-  background: #ff7b4a;
-  color: #1b0b06;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-#startGameBtn:hover {
-  filter: brightness(1.1);
-}
-
-/* Sidebar */
-
-.sidebar {
-  background: #101e18;
-  border-radius: 14px;
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-.sidebar p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #b8d5c5;
-}
-
-#leaderboardPlaceholder {
-  list-style: none;
-  font-size: 14px;
-  margin-bottom: 16px;
-}
-
-#leaderboardPlaceholder li {
-  padding: 4px 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-}
-
-.info-card {
-  margin-top: 6px;
-  padding: 10px;
-  border-radius: 10px;
-  background: rgba(12, 28, 20, 0.9);
-  font-size: 14px;
-  color: #d6f5e2;
-}
-
-.info-card h3 {
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
